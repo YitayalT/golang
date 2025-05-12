@@ -13,7 +13,9 @@ func main() {
 	fmt.Println("The following are lists of my tasks, I'll do it at night")
 	listOfTasks(taskLists)
 	fmt.Println("The following are updated task lists")
-	addTask(taskLists, "Watching movies")
+	taskLists = addTask(taskLists, "Watching movies")
+	taskLists = addTask(taskLists, "Learning Go")
+	fmt.Println(taskLists)
 }
 
 func listOfTasks(taskItems []string) {
@@ -22,7 +24,7 @@ func listOfTasks(taskItems []string) {
 	}
 }
 
-func addTask(taskItem []string, newTask string) {
+func addTask(taskItem []string, newTask string) []string {
 	var updatedTask = append(taskItem, newTask)
-	listOfTasks(updatedTask)
+	return updatedTask
 }
